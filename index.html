@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff1e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 400px;  /* bigger container */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+      min-height: 30px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #ff8a65;
+      color: white;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #ff7043;
+    }
+
+    button.operator {
+      background: #ffa726;
+    }
+
+    button.operator:hover {
+      background: #ff9800;
+    }
+
+    button.wide {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator">
+  <h2>Python Smart Calculator</h2>
+  <input id="expr" placeholder="Enter your expression here" autofocus>
+  
+  <div class="keypad">
+    <!-- digits -->
+    <button onclick="addToExpr('7')">7</button>
+    <button onclick="addToExpr('8')">8</button>
+    <button onclick="addToExpr('9')">9</button>
+    <button class="operator" onclick="addToExpr('/')">/</button>
+
+    <button onclick="addToExpr('4')">4</button>
+    <button onclick="addToExpr('5')">5</button>
+    <button onclick="addToExpr('6')">6</button>
+    <button class="operator" onclick="addToExpr('*')">*</button>
+
+    <button onclick="addToExpr('1')">1</button>
+    <button onclick="addToExpr('2')">2</button>
+    <button onclick="addToExpr('3')">3</button>
+    <button class="operator" onclick="addToExpr('-')">-</button>
+
+    <button onclick="addToExpr('0')">0</button>
+    <button onclick="addToExpr('.')">.</button>
+    <button class="operator" onclick="addToExpr('ans')">ans</button>
+    <button class="operator" onclick="addToExpr('+')">+</button>
+
+    <!-- parentheses and clear/evaluate -->
+    <button class="operator" onclick="addToExpr('(')">(</button>
+    <button class="operator" onclick="addToExpr(')')">)</button>
+    <button class="wide" onclick="clearExpr()">C</button>
+    <button class="wide" onclick="calculate()">=</button>
+  </div>
+
+  <div class="result" id="out"></div>
+</div>
+
+<script>
+function addToExpr(value) {
+  const expr = document.getElementById("expr");
+  expr.value += value;
+}
+
+function clearExpr() {
+  document.getElementById("expr").value = "";
+  document.getElementById("out").innerText = "";
+}
+
+function calculate() {
+  const expr = document.getElementById("expr").value;
+
+  fetch("/calculate", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({expression: expr})
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("out").innerText =
+      data.result !== undefined ? "Result: " + data.result : "Error: " + data.error;
+  });
+}
+</script>
+
+</body>
+</html>
