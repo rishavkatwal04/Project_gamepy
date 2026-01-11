@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Serif Display', serif;
+  background: linear-gradient(#eaf3b2, #cfe3a0);
+  color: #1d1d1d;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.navbar nav a {
+  font-size: 0.95rem;
+}
+
+.navbar nav a.active {
+  border-bottom: 2px solid #0b1d3a;
+}
+
+.page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.card {
+  background: #f5f8d9;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.login-card {
+  max-width: 420px;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.6rem 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.primary {
+  background: #0b1d3a;
+  color: #fff;
+}
+
+.secondary {
+  background: #8cb369;
+  color: #0b1d3a;
+}
+
+.full {
+  width: 100%;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.dash-card {
+  background: #0b1d3a;
+  color: #fff;
+  padding: 1.4rem;
+  border-radius: 18px;
+}
+
+.progress-bar {
+  background: #ccc;
+  height: 10px;
+  border-radius: 10px;
+  margin-top: 0.6rem;
+}
+
+.progress-fill {
+  width: 60%;
+  height: 100%;
+  background: #8cb369;
+  border-radius: 10px;
+}
+
+.level-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.level-card {
+  padding: 1.6rem;
+  border-radius: 22px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.level-card:hover {
+  transform: translateY(-6px);
+}
+
+.unlocked {
+  background: #8cb369;
+}
+
+.locked {
+  background: #bdbdbd;
+  opacity: 0.6;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
