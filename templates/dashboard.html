@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swa"
+    rel="">
+<head>
+<meta charset="UTF-8">
+<title>Gamepy | Dashboard</title>
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f2f5a9;
+    height: 100vh;
+    padding: 40px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.nav-logo {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;;
+    border-radius: 50%;
+    background: #0b1a3d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.profile {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #0b1a3d;
+    overflow: hidden;
+
+}
+
+/* Dashboard */
+.title {
+    text-align: center;
+    font-size: 60px;
+    
+
+}
+
+.progress {
+    text-align: center;
+    margin: 10px 0 30px;
+}
+
+.dashboard-box {
+    background: #0b1a3d;
+    border-radius: 30px;
+    width: 85%;
+    height: 75%;
+    margin: auto;
+    padding: 40px;
+    color: white;
+}
+
+.continue-btn {
+    background: #8fc36b;
+    padding: 14px 30px;
+    border-radius: 22px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    margin-bottom: 90px;
+}
+
+.card {
+    background: white;
+    color: black;
+    width: 150px;
+    height: 110px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="nav-logo">
+        <img src="Screenshot 2025-12-27 182948.png" width="45" height="45">
+    </div>
+    <div class="profile">
+        <img src="user.jpg" width="45" height="45">
+    </div>
+</div>
+
+<h2 class="title">Welcome, Student!</h2>
+<p class="progress">Progress: 60%</p>
+
+<div class="dashboard-box">
+
+    <button class="continue-btn">CONTINUE LESSON</button>
+    <div class="dashboard-container" style="display:flex; gap:20px; margin-top:30px; justify-content:center; flex-wrap:wrap;">
+
+    <div class="box" style="background:#fff; border-radius:20px; overflow:hidden; text-align:center; width:200px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <img src="LESSON.jpg" alt="Box 1" style="width:100%; height:150px; object-fit:cover;">
+        <button style="margin:10px 0; padding:8px 20px; border-radius:12px; border:none; background:#0b1a3d; color:white; cursor:pointer;">Progress</button>
+    </div>
+
+    <div class="box" style="background:#fff; border-radius:20px; overflow:hidden; text-align:center; width:200px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <img src="QUIZZES.jpg" alt="Box 2" style="width:100%; height:150px; object-fit:cover;">
+        <button style="margin:10px 0; padding:8px 20px; border-radius:12px; border:none; background:#0b1a3d; color:white; cursor:pointer;">Quizzes</button>
+    </div>
+
+    <div class="box" style="background:#fff; border-radius:20px; overflow:hidden; text-align:center; width:200px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <img src="PROGRESS.jpg" alt="Box 3" style="width:100%; height:150px; object-fit:cover;">
+        <button style="margin:10px 0; padding:8px 20px; border-radius:12px; border:none; background:#0b1a3d; color:white; cursor:pointer;">Lessons</button>
+    </div>
+
+</div>
+
+
+    <!-- <div class="cards">
+        <div class="card">📘<p>Lesson</p></div>
+        <div class="card">❓<p>Quiz</p></div>
+        <div class="card">📈<p>Progress</p></div>
+    </div> -->
+
+    <div class="footer">
+        <span>XP: 1200</span>
+        <span>Badge: 2</span>
+    </div>
+
+</div>
+
+</body>
+</html>
